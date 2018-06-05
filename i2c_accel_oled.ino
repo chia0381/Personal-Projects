@@ -15,7 +15,6 @@ Adafruit_SSD1306 display(OLED_RESET);
 #define YPOS 1
 #define DELTAY 2
 
-
 #define LOGO16_GLCD_HEIGHT 16 
 #define LOGO16_GLCD_WIDTH  16
 const int MPU=0x68; 
@@ -67,7 +66,8 @@ void loop(){
   Serial.print(" | Z = "); Serial.println(GyZ);
   Serial.println(" ");
 
-   // text display tests
+ // text display tests
+  //For Accel
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
@@ -102,8 +102,9 @@ void loop(){
   display.setTextColor(WHITE);
   display.setCursor(22,20);
   display.println(AcZ);
-  display.setTextColor(BLACK, WHITE); // 'inverted' text ac
+  display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //For Gyro
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(64,0);
