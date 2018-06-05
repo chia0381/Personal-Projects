@@ -1,4 +1,5 @@
 //Reference from - https://diyprojects.io/using-i2c-128x64-0-96-ssd1306-oled-display-arduino/#.WxaqpUxuKP8
+//Personal project done during my free time using Arduino Nano, MPU6050 and 128X64 I2C OLED 
 
 #include<Wire.h>
 #include <SPI.h>
