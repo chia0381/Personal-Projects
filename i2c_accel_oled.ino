@@ -1,6 +1,8 @@
 //Reference from - https://diyprojects.io/using-i2c-128x64-0-96-ssd1306-oled-display-arduino/#.WxaqpUxuKP8
-//Personal project done during my free time using Arduino Nano, MPU6050 and 128X64 I2C OLED 
+//Personal project done during my free time using Arduino Nano, MPU6050 and 128X64 I2C OLED
+//Combined two reference codes from accelerometer and adafruit oled to interface between these two components and the microcontroller
 
+//Import Libraries
 #include<Wire.h>
 #include <SPI.h>
 #include <Wire.h>
@@ -17,6 +19,8 @@ Adafruit_SSD1306 display(OLED_RESET);
 
 #define LOGO16_GLCD_HEIGHT 16 
 #define LOGO16_GLCD_WIDTH  16
+
+//Define Variables
 const int MPU=0x68; 
 int16_t AcX,AcY,AcZ,Tmp,GyX,GyY,GyZ;
 
@@ -141,6 +145,7 @@ void loop(){
   display.println(GyZ);
   display.setTextColor(BLACK, WHITE); // 'inverted' text
   
+  //Hold the data on the screen for 300 milli seconds and then reset the display for the next loop
   display.display();
   delay(300);
   display.clearDisplay();
