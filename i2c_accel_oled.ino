@@ -1,11 +1,11 @@
 //Reference from - https://diyprojects.io/using-i2c-128x64-0-96-ssd1306-oled-display-arduino/#.WxaqpUxuKP8
 //Personal project done during my free time using Arduino Nano, MPU6050 and 128X64 I2C OLED
 //Combined two reference codes from accelerometer and adafruit oled to interface between these two components and the microcontroller
+//Requires Adafruit LED libraries and <wire.h> library for I2C communication
 
 //Import Libraries
-#include<Wire.h>
-#include <SPI.h>
 #include <Wire.h>
+#include <SPI.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
@@ -70,38 +70,44 @@ void loop(){
   Serial.print(" | Z = "); Serial.println(GyZ);
   Serial.println(" ");
 
- // text display tests
+  //Text display tests
   //For Accel
+  //Displays "AcX: "
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   display.println("AcX: ");
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //Displays the value of AcX
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(22,0);
   display.println(AcX);
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //Displays "AcY: "
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,10);
   display.println("AcY: ");
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //Displays the value of AcY   
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(22,10);
   display.println(AcY);
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //Displays "AcZ: "
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,20);
   display.println("AcZ: ");
   display.setTextColor(BLACK, WHITE); // 'inverted' text
   
+  //Displays the value of AcZ
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(22,20);
@@ -109,36 +115,42 @@ void loop(){
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
   //For Gyro
+  //Displays "GyX: "
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(64,0);
   display.println("GyX: ");
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //Displays the value of GyX
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(86,0);
   display.println(GyX);
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //Displays "GyY: "
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(64,10);
   display.println("GyY: ");
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //Displays the value of GyY
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(86,10);
   display.println(GyY);
   display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+  //Displays "GyZ: "
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(64,20);
   display.println("GyZ: ");
   display.setTextColor(BLACK, WHITE); // 'inverted' text
   
+  //Displays the value of GyZ
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(86,20);
